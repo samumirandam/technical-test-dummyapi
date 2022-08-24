@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for PostList page component Should renders the same component 1`] = `
+<div>
+  <section
+    class="PostList"
+    data-testid="PostList"
+  />
+</div>
+`;

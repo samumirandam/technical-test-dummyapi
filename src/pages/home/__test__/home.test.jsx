@@ -13,7 +13,7 @@ const setup = (properties = {}) => {
 describe("Test for Home page component", () => {
   test("Should render without errors", () => {
     setup();
-    expect(screen.getByText("Posts")).toBeTruthy();
+    expect(screen.getByTestId("Home")).toBeTruthy();
   });
 
   test("Should renders the same component", () => {
@@ -47,6 +47,6 @@ describe("Test for Home page component", () => {
       },
     };
     setup(props);
-    expect(screen.getByText("Posts")).toBeTruthy();
+    expect(screen.getByText("adult Labrador retriever")).toBeTruthy();
   });
 });

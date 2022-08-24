@@ -4,10 +4,12 @@ exports[`Test for Home page component Should renders the same component 1`] = `
 <div>
   <section
     class="Home"
+    data-testid="Home"
   >
-    <h1>
-      Posts
-    </h1>
+    <section
+      class="PostList"
+      data-testid="PostList"
+    />
   </section>
 </div>
 `;

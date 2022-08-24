@@ -1,0 +1,12 @@
+@import "@styles/vars";
+
+.UserImage {
+  display: flex;
+  align-items: center;
+
+  figure {
+    border-radius: 50%;
+    width: 48px;
+    margin-right: $sm;
+  }
+}

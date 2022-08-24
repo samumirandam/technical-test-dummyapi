@@ -1,0 +1,19 @@
+@import "@styles/vars";
+
+.PostList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $lg;
+}
+
+@media (min-width: 768px) {
+  .PostList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .PostList {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

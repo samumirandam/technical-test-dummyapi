@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for Home page component Should renders the same component 1`] = `
+<div>
+  <div
+    class="UserImage"
+  >
+    <figure>
+      <img
+        alt="Image name test"
+      />
+    </figure>
+    <p>
+      name test
+    </p>
+  </div>
+</div>
+`;

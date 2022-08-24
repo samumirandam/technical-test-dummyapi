@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getPostListAction } from "@actions";
 
+import PostList from "@containers/post-list";
+
+import PostCard from "@components/post-card";
+
 const Home = () => {
   const dispatch = useDispatch();
 
@@ -14,9 +18,20 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="Home">
-      <h1>Posts</h1>
-      {postList && postList.map((post) => <p key={post.id}>Post</p>)}
+    <section className="Home" data-testid="Home">
+      <PostList>
+        {postList &&
+          postList.map((post) => (
+            <PostCard
+              key={post.id}
+              owner={post.owner}
+              image={post.image}
+              text={post.text}
+              likes={post.likes}
+              tags={post.tags}
+            />
+          ))}
+      </PostList>
     </section>
   );
 };

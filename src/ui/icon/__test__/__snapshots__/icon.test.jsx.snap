@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for Icon ui component Should renders the same component 1`] = `
+<div>
+  <div
+    class="Icon"
+  >
+    <p>
+      icon text test
+    </p>
+  </div>
+</div>
+`;
