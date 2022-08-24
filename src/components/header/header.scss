@@ -1,0 +1,16 @@
+@import "@styles/vars";
+
+.Header {
+  nav {
+    ul {
+      display: flex;
+      justify-content: end;
+
+      li {
+        margin: auto 0;
+        padding: $md;
+        list-style: none;
+      }
+    }
+  }
+}

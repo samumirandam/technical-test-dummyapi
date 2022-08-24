@@ -1,0 +1,37 @@
+// --white: #f1f1f5;
+// --black: #000000;
+// --primary-pulple: #6a4bff;
+// --primary-dark: #171725;
+// --primary-black-accent: #1d2335;
+// --secondary-yellow: #f6c949;
+// --secondary-red: #ff7256;
+// --secondary-green: #3bc963;
+// --secondary-orange: #ff6b2c;
+// --secondary-blue: #1d92f1;
+// --text-color-black: #25546f;
+// --text-color-dark-grey: #696974;
+// --text-color-grey: #92929d;
+// --text-color-line-dark: #eaeaea;
+// --text-color-white-grey: #f1f1f5;
+// --text-color-white: #ffffff;
+
+// Colors
+$back-ground: #f1f1f5;
+
+// Spacing
+$xs: 8px;
+$sm: 12px;
+$md: 16px;
+$lg: 20px;
+
+// Backgrounds
+$back-ground-flat: $back-ground;
+$back-ground-concave: linear-gradient(145deg, #d9d9dd, #ffffff);
+$back-ground-convex: linear-gradient(145deg, #ffffff, #d9d9dd);
+$back-ground-pressed: $back-ground;
+
+// Shadows
+$box-shadow-flat: 8px 8px 16px #cdcdd0, -8px -8px 16px #ffffff;
+$box-shadow-concave: 8px 8px 16px #cdcdd0, -8px -8px 16px #ffffff;
+$box-shadow-convex: 8px 8px 16px #cdcdd0, -8px -8px 16px #ffffff;
+$box-shadow-pressed: inset 8px 8px 16px #cdcdd0, inset -8px -8px 16px #ffffff;

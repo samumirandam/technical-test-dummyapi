@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for Home page component Should renders the same component 1`] = `
+<div>
+  <section
+    class="Home"
+  >
+    <h1>
+      Posts
+    </h1>
+  </section>
+</div>
+`;

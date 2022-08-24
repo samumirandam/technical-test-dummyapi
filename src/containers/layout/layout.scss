@@ -1,0 +1,13 @@
+@import "@styles/vars";
+
+.Layout {
+  main {
+    display: grid;
+    grid-template-columns: auto minmax(320px, 1024px) auto;
+
+    > section {
+      padding: 0 $lg;
+      grid-column: 2 / 3;
+    }
+  }
+}

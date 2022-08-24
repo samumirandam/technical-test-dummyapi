@@ -1,0 +1,19 @@
+@import "@styles/vars";
+
+.Button {
+  padding: 8px;
+  border-radius: 12px;
+  background: $back-ground-convex;
+  box-shadow: $box-shadow-convex;
+
+  &:hover,
+  &:focus {
+    background: $back-ground-concave;
+    box-shadow: $box-shadow-concave;
+  }
+
+  &:active {
+    background: $back-ground-pressed;
+    box-shadow: $box-shadow-pressed;
+  }
+}
