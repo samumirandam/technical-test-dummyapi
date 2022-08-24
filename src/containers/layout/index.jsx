@@ -6,7 +6,7 @@ import "./layout.scss";
 
 const Layout = ({ children }) => {
   return (
-    <div className="Layout">
+    <div className="Layout" data-testid="Layout">
       <Header />
       <main>{children}</main>
     </div>

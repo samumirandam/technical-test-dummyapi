@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for Layout container component Should renders the same component 1`] = `
+<div>
+  <div
+    class="Layout"
+    data-testid="Layout"
+  >
+    <header
+      class="Header"
+    >
+      <nav>
+        <ul>
+          <li>
+            <div
+              class="Button"
+            >
+              Iniciar sesión
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main />
+  </div>
+</div>
+`;
