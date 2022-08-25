@@ -1,10 +1,21 @@
 @import "@styles/vars";
 
 .Button {
-  padding: 4px 8px; 
+  padding: 4px 8px;
   border-radius: 12px;
-  background: $back-ground-convex;
+  background: $background-convex;
   box-shadow: $box-shadow-convex;
+
+  &:hover,
+  &:focus {
+    background: $background-concave;
+    box-shadow: $box-shadow-concave;
+  }
+
+  &:active {
+    background: $background-pressed;
+    box-shadow: $box-shadow-pressed;
+  }
 
   &.flat {
     background: transparent;
@@ -17,19 +28,23 @@
     }
 
     &:active {
-      background: $back-ground-pressed;
+      background: $background-pressed;
       box-shadow: $box-shadow-pressed;
     }
   }
 
-  &:hover,
-  &:focus {
-    background: $back-ground-concave;
-    box-shadow: $box-shadow-concave;
-  }
+  &.primary {
+    background: $background-primary-convex;
+    color: $color-white;
 
-  &:active {
-    background: $back-ground-pressed;
-    box-shadow: $box-shadow-pressed;
+    &:hover,
+    &:focus {
+      background: $background-primary-concave;
+    }
+
+    &:active {
+      background: $background-primary-pressed;
+      box-shadow: $box-shadow-primary-pressed;
+    }
   }
 }

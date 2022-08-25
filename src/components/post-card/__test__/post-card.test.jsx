@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@utils/test-utils";
+import { render, screen, fireEvent } from "@utils/test-utils";
 
 import PostCard from "../index";
 
@@ -12,6 +12,7 @@ const defaultProps = {
     picture: "https://randomuser.me/api/portraits/women/58.jpg",
   },
   text: "test text",
+  openUserProfile: jest.fn(),
 };
 
 const setup = (properties = {}) => {
@@ -28,5 +29,11 @@ describe("Test for PostCard component", () => {
   test("Should renders the same component", () => {
     const { container } = setup();
     expect(container).toMatchSnapshot();
+  });
+
+  test("Should render click in open user profile", () => {
+    setup();
+    fireEvent.click(screen.getByText("Sara Andersen"));
+    expect(defaultProps.openUserProfile).toHaveBeenCalled();
   });
 });

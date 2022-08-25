@@ -1,9 +1,31 @@
 import React from "react";
-import { render, screen } from "@utils/test-utils";
+import { render, screen, fireEvent } from "@utils/test-utils";
 
 import Home from "../index";
 
-const defaultProps = {};
+const defaultProps = {
+  postList: {
+    data: {
+      data: [
+        {
+          id: "60d21b4667d0d8992e610c85",
+          image: "https://img.dummyapi.io/photo-1564694202779-bc908c327862.jpg",
+          likes: 43,
+          tags: ["animal", "dog", "golden retriever"],
+          text: "adult Labrador retriever",
+          publishDate: "2020-05-24T14:53:17.598Z",
+          owner: {
+            id: "60d0fe4f5311236168a109ca",
+            title: "ms",
+            firstName: "Sara",
+            lastName: "Andersen",
+            picture: "https://randomuser.me/api/portraits/women/58.jpg",
+          },
+        },
+      ],
+    },
+  },
+};
 
 const setup = (properties = {}) => {
   const setupStore = { ...defaultProps, ...properties };
@@ -13,7 +35,7 @@ const setup = (properties = {}) => {
 describe("Test for Home page component", () => {
   test("Should render without errors", () => {
     setup();
-    expect(screen.getByTestId("Home")).toBeTruthy();
+    expect(screen.getByText("adult Labrador retriever")).toBeTruthy();
   });
 
   test("Should renders the same component", () => {
@@ -21,32 +43,43 @@ describe("Test for Home page component", () => {
     expect(container).toMatchSnapshot();
   });
 
-  test("Should render with data", () => {
+  test("Should render without data", () => {
     const props = {
       postList: {
         data: {
-          data: [
-            {
-              id: "60d21b4667d0d8992e610c85",
-              image:
-                "https://img.dummyapi.io/photo-1564694202779-bc908c327862.jpg",
-              likes: 43,
-              tags: ["animal", "dog", "golden retriever"],
-              text: "adult Labrador retriever",
-              publishDate: "2020-05-24T14:53:17.598Z",
-              owner: {
-                id: "60d0fe4f5311236168a109ca",
-                title: "ms",
-                firstName: "Sara",
-                lastName: "Andersen",
-                picture: "https://randomuser.me/api/portraits/women/58.jpg",
-              },
-            },
-          ],
+          data: [],
         },
       },
     };
     setup(props);
-    expect(screen.getByText("adult Labrador retriever")).toBeTruthy();
+    expect(screen.getByTestId("Home")).toBeTruthy();
+  });
+
+  test("Should render click in open user profile", () => {
+    setup();
+    fireEvent.click(screen.getByText("Sara Andersen"));
+    expect(screen.getByText("Cerrar")).toBeTruthy();
+    fireEvent.click(screen.getByText("Cerrar"));
+  });
+
+  test("Should render loading state", () => {
+    const props = {
+      postList: {
+        isLoading: true,
+      },
+    };
+    setup(props);
+    expect(screen.getByTestId("Loader")).toBeTruthy();
+  });
+
+  test("Should render error state", () => {
+    const props = {
+      postList: {
+        isError: true,
+        errorDetail: "test error",
+      },
+    };
+    setup(props);
+    expect(screen.getByText("test error")).toBeTruthy();
   });
 });
