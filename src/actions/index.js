@@ -24,9 +24,15 @@ export const getPostListSteps = {
 };
 
 export const getPostListAction = (payload) => (dispatch) => {
-  getData(dispatch, getPostListSteps, {
-    method: `/post?limit=${payload.limit}&page=${payload.page}`,
-  });
+  if (payload.tag) {
+    getData(dispatch, getPostListSteps, {
+      method: `/tag/${payload.tag}/post?limit=${payload.limit}&page=${payload.page}`,
+    });
+  } else {
+    getData(dispatch, getPostListSteps, {
+      method: `/post?limit=${payload.limit}&page=${payload.page}`,
+    });
+  }
 };
 
 export const getUserSteps = {

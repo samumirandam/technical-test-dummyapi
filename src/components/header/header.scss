@@ -1,6 +1,13 @@
 @import "@styles/vars";
 
 .Header {
+  display: flex;
+  justify-content: space-between;
+
+  &__home {
+    margin: auto 0 auto $md;
+  }
+
   nav {
     ul {
       display: flex;

@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import reduxThunk from "redux-thunk";
 import { configureStore as configureReduxStore } from "@reduxjs/toolkit";
+import { BrowserRouter } from "react-router-dom";
 
 import reducer from "@reducers";
 
@@ -16,7 +17,11 @@ const AllTheProviders = ({ children }) => {
   });
   const setupStore = { ...store.getState(), ...children.props };
   const compomentStore = mockStore(setupStore);
-  return <Provider store={compomentStore}>{children}</Provider>;
+  return (
+    <Provider store={compomentStore}>
+      <BrowserRouter>{children}</BrowserRouter>
+    </Provider>
+  );
 };
 
 const customRender = (ui, options) =>

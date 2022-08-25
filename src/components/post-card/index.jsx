@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import UserImage from "@ui/user-image";
 import Button from "@ui/button";
@@ -7,6 +8,12 @@ import Icon from "@ui/icon";
 import "./post-card.scss";
 
 const PostCard = ({ owner, image, text, likes, tags, openUserProfile }) => {
+  let navigate = useNavigate();
+
+  const handleClickTag = (tag) => {
+    navigate(`/tag/${tag}`, { replace: true });
+  };
+
   return (
     <div className="PostCard">
       <Button flat onClick={() => openUserProfile(owner.id)}>
@@ -29,7 +36,12 @@ const PostCard = ({ owner, image, text, likes, tags, openUserProfile }) => {
       <div className="PostCard__tags">
         {tags &&
           tags.map((tag) => (
-            <Button key={tag} className="PostCard__tag" flat>
+            <Button
+              key={tag}
+              className="PostCard__tag"
+              flat
+              onClick={() => handleClickTag(tag)}
+            >
               <Icon name="tag" text={tag} />
             </Button>
           ))}

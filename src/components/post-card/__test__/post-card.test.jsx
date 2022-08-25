@@ -11,6 +11,7 @@ const defaultProps = {
     lastName: "Andersen",
     picture: "https://randomuser.me/api/portraits/women/58.jpg",
   },
+  tags: ["cat"],
   text: "test text",
   openUserProfile: jest.fn(),
 };
@@ -35,5 +36,11 @@ describe("Test for PostCard component", () => {
     setup();
     fireEvent.click(screen.getByText("Sara Andersen"));
     expect(defaultProps.openUserProfile).toHaveBeenCalled();
+  });
+
+  test("Should render click in tag", () => {
+    setup();
+    fireEvent.click(screen.getByText("cat"));
+    expect(global.window.location.pathname).toEqual("/tag/cat");
   });
 });
