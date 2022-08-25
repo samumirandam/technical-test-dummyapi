@@ -6,11 +6,18 @@ import { getPostListAction } from "@actions";
 import PostList from "@containers/post-list";
 
 import PostCard from "@components/post-card";
+import Loader from "@components/loader";
+import Error from "@components/error";
+
+import "./home.scss";
 
 const Home = () => {
   const dispatch = useDispatch();
 
   const postList = useSelector((state) => state.postList?.data?.data);
+  const isLoading = useSelector((state) => state.postList?.isLoading);
+  const isError = useSelector((state) => state.postList?.isError);
+  const errorDetail = useSelector((state) => state.postList?.errorDetail);
 
   useEffect(() => {
     const payload = {};
@@ -32,6 +39,8 @@ const Home = () => {
             />
           ))}
       </PostList>
+      {isLoading && <Loader />}
+      {isError && <Error error={errorDetail} />}
     </section>
   );
 };
