@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: $lg;
+  margin-bottom: $lg;
 }
 
 @media (min-width: 768px) {

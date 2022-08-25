@@ -21,7 +21,7 @@
     border-radius: 12px;
     margin: 15% auto;
     padding: $xs;
-    width: 80%;
+    width: 90%;
   }
 
   &__header {
@@ -45,7 +45,7 @@
 @media (min-width: 768px) {
   .Modal {
     &__container {
-      width: 60%;
+      width: 65%;
     }
   }
 }

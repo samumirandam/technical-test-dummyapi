@@ -11,14 +11,20 @@ import Loader from "@components/loader";
 import Error from "@components/error";
 import UserProfile from "@components/user-profile";
 
+import Button from "@ui/button";
+
 import "./home.scss";
+
+const LIMIT = 12;
 
 const Home = () => {
   const dispatch = useDispatch();
   const [modalUserOpen, setModalUserOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(undefined);
+  const [page, setPage] = useState(0);
 
   const postList = useSelector((state) => state.postList?.data?.data);
+  const total = useSelector((state) => state.postList?.data?.total);
   const isLoading = useSelector((state) => state.postList?.isLoading);
   const isError = useSelector((state) => state.postList?.isError);
   const errorDetail = useSelector((state) => state.postList?.errorDetail);
@@ -29,8 +35,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    dispatch(getPostListAction(12));
-  }, []);
+    dispatch(getPostListAction({ limit: LIMIT, page: page }));
+  }, [page]);
 
   return (
     <>
@@ -49,6 +55,15 @@ const Home = () => {
               />
             ))}
         </PostList>
+        {!isLoading && page < Math.trunc(total / LIMIT) && (
+          <Button
+            className="Home__button"
+            primary
+            onClick={() => setPage(page + 1)}
+          >
+            Cargar más posts
+          </Button>
+        )}
         {isLoading && <Loader />}
         {isError && <Error error={errorDetail} />}
       </section>
