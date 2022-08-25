@@ -14,6 +14,7 @@ const defaultProps = {
   tags: ["cat"],
   text: "test text",
   openUserProfile: jest.fn(),
+  openPostComment: jest.fn(),
 };
 
 const setup = (properties = {}) => {
@@ -42,5 +43,11 @@ describe("Test for PostCard component", () => {
     setup();
     fireEvent.click(screen.getByText("cat"));
     expect(global.window.location.pathname).toEqual("/tag/cat");
+  });
+
+  test("Should render click in open comments", () => {
+    setup();
+    fireEvent.click(screen.getByText("Comentarios"));
+    expect(defaultProps.openPostComment).toHaveBeenCalled();
   });
 });

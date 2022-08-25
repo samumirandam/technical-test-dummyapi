@@ -7,6 +7,9 @@ import {
   GET_USER_LOADING,
   GET_USER_SUCCESS,
   GET_USER_ERROR,
+  GET_COMMENT_LOADING,
+  GET_COMMENT_SUCCESS,
+  GET_COMMENT_ERROR,
 } from "@actions/types";
 
 describe("Test for Reducers", () => {
@@ -110,6 +113,55 @@ describe("Test for Reducers", () => {
       ...initialState,
       user: {
         ...initialState.user,
+        isError: true,
+        errorDetail: payload,
+      },
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
+  test("Should get comment loading", () => {
+    const payload = {};
+    const action = {
+      type: GET_COMMENT_LOADING,
+      payload,
+    };
+    const expected = {
+      ...initialState,
+      comment: {
+        ...initialState.comment,
+        isLoading: true,
+      },
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
+
+  test("Should get comment success", () => {
+    const payload = {};
+    const action = {
+      type: GET_COMMENT_SUCCESS,
+      payload,
+    };
+    const expected = {
+      ...initialState,
+      comment: {
+        ...initialState.comment,
+        isSucces: true,
+        data: payload,
+      },
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
+
+  test("Should get comment error", () => {
+    const payload = {};
+    const action = {
+      type: GET_COMMENT_ERROR,
+      payload,
+    };
+    const expected = {
+      ...initialState,
+      comment: {
+        ...initialState.comment,
         isError: true,
         errorDetail: payload,
       },

@@ -7,7 +7,16 @@ import Icon from "@ui/icon";
 
 import "./post-card.scss";
 
-const PostCard = ({ owner, image, text, likes, tags, openUserProfile }) => {
+const PostCard = ({
+  id,
+  owner,
+  image,
+  text,
+  likes,
+  tags,
+  openUserProfile,
+  openPostComment,
+}) => {
   let navigate = useNavigate();
 
   const handleClickTag = (tag) => {
@@ -29,8 +38,8 @@ const PostCard = ({ owner, image, text, likes, tags, openUserProfile }) => {
         <Button className="PostCard__tag" flat>
           <Icon name="like" text={likes} />
         </Button>
-        <Button flat>
-          <Icon name="comment" />
+        <Button flat onClick={() => openPostComment(id)}>
+          <Icon name="comment" text="Comentarios" />
         </Button>
       </div>
       <div className="PostCard__tags">

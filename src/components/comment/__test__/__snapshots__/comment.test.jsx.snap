@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for Comment component Should renders the same component 1`] = `
+<div>
+  <div
+    class="Comment"
+  >
+    <div
+      class="UserImage"
+    >
+      <figure>
+        <img
+          alt="Image Anaelle Dumas"
+          src="https://randomuser.me/api/portraits/med/women/25.jpg"
+        />
+      </figure>
+      <p>
+        Anaelle Dumas
+      </p>
+    </div>
+    <p
+      class="Comment__date"
+    >
+      about 6 hours
+    </p>
+    <p
+      class="Comment__message"
+    >
+      comment test
+    </p>
+  </div>
+</div>
+`;

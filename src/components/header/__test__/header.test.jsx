@@ -21,7 +21,7 @@ describe("Test for Header component", () => {
     expect(container).toMatchSnapshot();
   });
 
-  test("Should render click in open user profile", () => {
+  test("Should render click in home icon", () => {
     setup();
     fireEvent.click(screen.getByText("Petgram"));
     expect(global.window.location.pathname).toEqual("/");
