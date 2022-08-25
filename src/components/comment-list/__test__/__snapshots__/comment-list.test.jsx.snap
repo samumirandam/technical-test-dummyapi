@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for CommentList component Should renders the same component 1`] = `
+<div>
+  <div
+    class="CommentList"
+  >
+    <div
+      class="CommentList__container"
+    >
+      <div
+        class="Comment"
+      >
+        <div
+          class="UserImage"
+        >
+          <figure>
+            <img
+              alt="Image Anaelle Dumas"
+              src="https://randomuser.me/api/portraits/med/women/25.jpg"
+            />
+          </figure>
+          <p>
+            Anaelle Dumas
+          </p>
+        </div>
+        <p
+          class="Comment__date"
+        >
+          over 2 years
+        </p>
+        <p
+          class="Comment__message"
+        >
+          Nice pic
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

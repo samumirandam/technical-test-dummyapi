@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { format } from "date-fns";
 
 import { getUserAction } from "@actions";
 
@@ -44,9 +45,10 @@ const UserProfile = ({ id }) => {
             <Icon name="country" text={userData.location?.country} />
             <Icon
               name="birthday"
-              text={`Cumpleaños el ${new Date(userData.dateOfBirth).getDate()} de ${
-                new Date(userData.dateOfBirth).getMonth() + 1
-              }`}
+              text={`Cumpleaños el ${format(
+                new Date(userData.dateOfBirth),
+                "d 'de' MMMM"
+              )}`}
             />
           </div>
         </>

@@ -59,8 +59,15 @@ describe("Test for Home page component", () => {
   test("Should render click in open user profile", () => {
     setup();
     fireEvent.click(screen.getByText("Sara Andersen"));
-    expect(screen.getByText("Cerrar")).toBeTruthy();
-    fireEvent.click(screen.getByText("Cerrar"));
+    expect(screen.getByText("Información del usuario")).toBeTruthy();
+    fireEvent.click(screen.getAllByText("Cerrar")[0]);
+  });
+
+  test("Should render click in open comments", () => {
+    setup();
+    fireEvent.click(screen.getAllByText("Comentarios")[0]);
+    expect(screen.getAllByText("Comentarios")[1]).toBeTruthy();
+    fireEvent.click(screen.getAllByText("Cerrar")[1]);
   });
 
   test("Should render click get more posts", () => {

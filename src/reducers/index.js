@@ -5,6 +5,9 @@ import {
   GET_USER_LOADING,
   GET_USER_SUCCESS,
   GET_USER_ERROR,
+  GET_COMMENT_LOADING,
+  GET_COMMENT_SUCCESS,
+  GET_COMMENT_ERROR,
 } from "@actions/types";
 
 export const initialState = {
@@ -16,6 +19,13 @@ export const initialState = {
     errorDetail: null,
   },
   user: {
+    isLoading: false,
+    isSucces: false,
+    isError: false,
+    data: null,
+    errorDetail: null,
+  },
+  comment: {
     isLoading: false,
     isSucces: false,
     isError: false,
@@ -79,6 +89,35 @@ const reducer = (state = initialState, action) => {
         ...state,
         user: {
           ...initialState.user,
+          isError: true,
+          errorDetail: action.payload,
+        },
+      };
+    }
+    case GET_COMMENT_LOADING: {
+      return {
+        ...state,
+        comment: {
+          ...initialState.comment,
+          isLoading: true,
+        },
+      };
+    }
+    case GET_COMMENT_SUCCESS: {
+      return {
+        ...state,
+        comment: {
+          ...initialState.comment,
+          isSucces: true,
+          data: action.payload,
+        },
+      };
+    }
+    case GET_COMMENT_ERROR: {
+      return {
+        ...state,
+        comment: {
+          ...initialState.comment,
           isError: true,
           errorDetail: action.payload,
         },

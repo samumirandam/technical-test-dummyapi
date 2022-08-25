@@ -12,6 +12,7 @@ import PostCard from "@components/post-card";
 import Loader from "@components/loader";
 import Error from "@components/error";
 import UserProfile from "@components/user-profile";
+import CommentList from "@components/comment-list";
 
 import Button from "@ui/button";
 
@@ -26,6 +27,8 @@ const Home = () => {
 
   const [modalUserOpen, setModalUserOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(undefined);
+  const [modalCommentOpen, setModalCommentOpen] = useState(false);
+  const [selectedPost, setSelectedPost] = useState(undefined);
 
   const postList = useSelector((state) => state.postList?.data?.data);
   const total = useSelector((state) => state.postList?.data?.total);
@@ -36,6 +39,11 @@ const Home = () => {
   const handleOpenUserProfile = (userId) => {
     setSelectedUser(userId);
     setModalUserOpen(true);
+  };
+
+  const handleOpenPostComment = (postId) => {
+    setSelectedPost(postId);
+    setModalCommentOpen(true);
   };
 
   const handleClickMorePosts = () => {
@@ -58,12 +66,14 @@ const Home = () => {
             postList.map((post) => (
               <PostCard
                 key={post.id}
+                id={post.id}
                 owner={post.owner}
                 image={post.image}
                 text={post.text}
                 likes={post.likes}
                 tags={post.tags}
                 openUserProfile={handleOpenUserProfile}
+                openPostComment={handleOpenPostComment}
               />
             ))}
         </PostList>
@@ -85,6 +95,13 @@ const Home = () => {
         title="Información del usuario"
       >
         <UserProfile id={selectedUser} />
+      </Modal>
+      <Modal
+        isOpen={modalCommentOpen}
+        closeModal={() => setModalCommentOpen(false)}
+        title="Comentarios"
+      >
+        <CommentList idPost={selectedPost} />
       </Modal>
     </>
   );

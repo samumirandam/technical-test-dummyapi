@@ -1,0 +1,13 @@
+.Comment {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+
+  &__date {
+    justify-self: end;
+  }
+
+  &__message {
+    grid-column: 1 / 3;
+  }
+}
