@@ -6,10 +6,10 @@ import Icon from "@ui/icon";
 
 import "./post-card.scss";
 
-const PostCard = ({ owner, image, text, likes, tags }) => {
+const PostCard = ({ owner, image, text, likes, tags, openUserProfile }) => {
   return (
     <div className="PostCard">
-      <Button flat>
+      <Button flat onClick={() => openUserProfile(owner.id)}>
         <UserImage
           image={owner.picture}
           name={`${owner.firstName} ${owner.lastName}`}

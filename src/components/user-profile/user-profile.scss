@@ -1,0 +1,9 @@
+.UserProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__image {
+    border-radius: 12px;
+  }
+}

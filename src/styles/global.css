@@ -20,3 +20,13 @@ img {
   object-fit: cover;
   border-radius: inherit;
 }
+
+button {
+  font-family: inherit;
+  font-size: 100%;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}

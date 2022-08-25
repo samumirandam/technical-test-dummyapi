@@ -3,11 +3,18 @@ import classnames from "classnames";
 
 import "./button.scss";
 
-const Button = ({ children, className, flat }) => {
+const Button = ({ children, className, flat, primary, onClick }) => {
   return (
-    <div className={classnames("Button", className, { flat: flat })}>
+    <button
+      type="button"
+      className={classnames("Button", className, {
+        flat: flat,
+        primary: primary,
+      })}
+      onClick={onClick}
+    >
       {children}
-    </div>
+    </button>
   );
 };
 

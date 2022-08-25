@@ -4,7 +4,7 @@ import "./loader.scss";
 
 const Loader = () => {
   return (
-    <div className="Loader">
+    <div className="Loader" data-testid="Loader">
       <div className="lds-grid">
         <div></div>
         <div></div>

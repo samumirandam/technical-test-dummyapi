@@ -5,8 +5,9 @@ exports[`Test for PostCard component Should renders the same component 1`] = `
   <div
     class="PostCard"
   >
-    <div
+    <button
       class="Button flat"
+      type="button"
     >
       <div
         class="UserImage"
@@ -21,7 +22,7 @@ exports[`Test for PostCard component Should renders the same component 1`] = `
           Sara Andersen
         </p>
       </div>
-    </div>
+    </button>
     <figure
       class="PostCard__image"
     >
@@ -32,8 +33,9 @@ exports[`Test for PostCard component Should renders the same component 1`] = `
     <div
       class="PostCard__icons"
     >
-      <div
+      <button
         class="Button PostCard__tag flat"
+        type="button"
       >
         <div
           class="Icon"
@@ -52,9 +54,10 @@ exports[`Test for PostCard component Should renders the same component 1`] = `
             />
           </svg>
         </div>
-      </div>
-      <div
+      </button>
+      <button
         class="Button flat"
+        type="button"
       >
         <div
           class="Icon"
@@ -73,7 +76,7 @@ exports[`Test for PostCard component Should renders the same component 1`] = `
             />
           </svg>
         </div>
-      </div>
+      </button>
     </div>
     <div
       class="PostCard__tags"
