@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@utils/test-utils";
+import { render, screen, fireEvent } from "@utils/test-utils";
 
 import Header from "../index";
 
@@ -19,5 +19,11 @@ describe("Test for Header component", () => {
   test("Should renders the same component", () => {
     const { container } = setup();
     expect(container).toMatchSnapshot();
+  });
+
+  test("Should render click in open user profile", () => {
+    setup();
+    fireEvent.click(screen.getByText("Petgram"));
+    expect(global.window.location.pathname).toEqual("/");
   });
 });

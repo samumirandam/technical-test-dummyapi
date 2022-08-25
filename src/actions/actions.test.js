@@ -37,8 +37,15 @@ describe("Test for Actions", () => {
     expect(actions.getPostListSteps.error(payload)).toEqual(expected);
   });
 
-  test("Should call getPostListAction", () => {
-    const payload = "12";
+  test("Should call getPostListAction with limit", () => {
+    const payload = { limit: 12 };
+    const dispatch = jest.fn();
+    actions.getPostListAction(payload)(dispatch);
+    expect(dispatch).toHaveBeenCalled();
+  });
+
+  test("Should call getPostListAction with limit and tag", () => {
+    const payload = { limit: 12, tag: "cat" };
     const dispatch = jest.fn();
     actions.getPostListAction(payload)(dispatch);
     expect(dispatch).toHaveBeenCalled();

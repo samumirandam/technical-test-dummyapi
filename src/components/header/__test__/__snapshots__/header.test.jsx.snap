@@ -5,6 +5,12 @@ exports[`Test for Header component Should renders the same component 1`] = `
   <header
     class="Header"
   >
+    <button
+      class="Button Header__home flat"
+      type="button"
+    >
+      Petgram
+    </button>
     <nav>
       <ul>
         <li>

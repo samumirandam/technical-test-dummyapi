@@ -23,6 +23,7 @@ const defaultProps = {
           },
         },
       ],
+      total: 20,
     },
   },
 };
@@ -60,6 +61,20 @@ describe("Test for Home page component", () => {
     fireEvent.click(screen.getByText("Sara Andersen"));
     expect(screen.getByText("Cerrar")).toBeTruthy();
     fireEvent.click(screen.getByText("Cerrar"));
+  });
+
+  test("Should render click get more posts", () => {
+    setup();
+    fireEvent.click(screen.getByText("Cargar más posts"));
+    expect(screen.getByText("Sara Andersen")).toBeTruthy();
+  });
+
+  test("Should render click get more posts", () => {
+    setup();
+    fireEvent.click(screen.getByText("dog"));
+    expect(global.window.location.pathname).toEqual("/tag/dog");
+    fireEvent.click(screen.getByText("Cargar más posts"));
+    expect(screen.getByText("Sara Andersen")).toBeTruthy();
   });
 
   test("Should render loading state", () => {

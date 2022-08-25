@@ -104,7 +104,7 @@ exports[`Test for UserProfile component Should renders the same component 1`] = 
           />
         </svg>
         <p>
-          30 de 4
+          Cumpleaños el 30 de 4
         </p>
       </div>
     </div>

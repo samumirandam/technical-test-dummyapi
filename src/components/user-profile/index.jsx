@@ -44,7 +44,7 @@ const UserProfile = ({ id }) => {
             <Icon name="country" text={userData.location?.country} />
             <Icon
               name="birthday"
-              text={`${new Date(userData.dateOfBirth).getDate()} de ${
+              text={`Cumpleaños el ${new Date(userData.dateOfBirth).getDate()} de ${
                 new Date(userData.dateOfBirth).getMonth() + 1
               }`}
             />

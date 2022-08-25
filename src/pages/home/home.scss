@@ -1,4 +1,10 @@
 .Home {
   display: flex;
   flex-direction: column;
+
+  &__button {
+    align-self: center;
+    width: 100%;
+    max-width: 425px;
+  }
 }
