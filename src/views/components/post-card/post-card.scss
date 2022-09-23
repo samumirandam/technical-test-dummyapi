@@ -1,0 +1,33 @@
+@import '@styles/vars';
+
+.PostCard {
+  border-radius: 12px;
+  background-color: $background-flat;
+  box-shadow: $box-shadow-flat;
+  padding: $sm;
+
+  &__image {
+    height: 320px;
+    margin: $sm 0;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: $xs;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $xs;
+  }
+
+  &__tag {
+    margin-right: $xs;
+  }
+
+  &__text {
+    padding: $xs;
+  }
+}
