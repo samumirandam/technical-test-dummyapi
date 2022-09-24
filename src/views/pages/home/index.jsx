@@ -53,10 +53,11 @@ const Home = () => {
   };
 
   const handleClickMorePosts = () => {
+    const nextPage = Number(page || 0) + 1;
     if (tag) {
-      navigate(`page/${(page || 0) + 1}`);
+      navigate(`page/${nextPage}`);
     } else {
-      navigate(`/page/${(page || 0) + 1}`);
+      navigate(`/page/${nextPage}`);
     }
   };
 
