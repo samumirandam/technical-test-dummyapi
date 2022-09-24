@@ -2,7 +2,13 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getCommentAction } from '@actions';
+import { getCommentAction } from '@modules/comment/actions';
+import {
+  getComments,
+  isCommentLoading,
+  isCommentError,
+  getCommentErrorDetail,
+} from '@modules/comment/selectors';
 
 import Loader from '@components/loader';
 import Error from '@components/error';
@@ -14,10 +20,10 @@ import './comment-list.scss';
 const CommentList = ({ idPost }) => {
   const dispatch = useDispatch();
 
-  const commentData = useSelector((state) => state.comment?.data?.data);
-  const isLoading = useSelector((state) => state.comment?.isLoading);
-  const isError = useSelector((state) => state.comment?.isError);
-  const errorDetail = useSelector((state) => state.comment?.errorDetail);
+  const commentData = useSelector(getComments);
+  const isLoading = useSelector(isCommentLoading);
+  const isError = useSelector(isCommentError);
+  const errorDetail = useSelector(getCommentErrorDetail);
 
   useEffect(() => {
     if (idPost) {

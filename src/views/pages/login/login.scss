@@ -1,0 +1,17 @@
+@import '@styles/vars';
+
+.Login {
+  display: grid;
+  place-content: center;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $md;
+    padding: $lg;
+    border-radius: 12px;
+    background-color: $background-flat;
+    box-shadow: $box-shadow-flat;
+    min-width: 320px;
+  }
+}

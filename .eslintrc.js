@@ -13,7 +13,7 @@ module.exports = {
   plugins: ['react', 'import'],
   rules: {
     semi: ['error', 'always'],
-    'linebreak-style': ['error', 'windows'],
+    // 'linebreak-style': ['error', 'windows'],
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function' },
@@ -28,8 +28,7 @@ module.exports = {
           ['@styles', './src/assets/styles/'],
           ['@images', './src/assets/images/'],
           ['@hooks', './src/hooks/'],
-          ['@actions', './src/store/actions/'],
-          ['@reducers', './src/store/reducers/'],
+          ['@modules', './src/modules/'],
           ['@utils', './src/utils/'],
           ['@components', './src/views/components/'],
           ['@containers', './src/views/containers/'],

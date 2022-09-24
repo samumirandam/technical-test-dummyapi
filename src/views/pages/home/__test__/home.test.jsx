@@ -4,7 +4,7 @@ import { render, screen, fireEvent } from '@utils/test-utils';
 import Home from '../index';
 
 const defaultProps = {
-  postList: {
+  post: {
     data: {
       data: [
         {
@@ -46,7 +46,7 @@ describe('Test for Home page component', () => {
 
   test('Should render without data', () => {
     const props = {
-      postList: {
+      post: {
         data: {
           data: [],
         },
@@ -86,7 +86,7 @@ describe('Test for Home page component', () => {
 
   test('Should render loading state', () => {
     const props = {
-      postList: {
+      post: {
         isLoading: true,
       },
     };
@@ -96,7 +96,7 @@ describe('Test for Home page component', () => {
 
   test('Should render error state', () => {
     const props = {
-      postList: {
+      post: {
         isError: true,
         errorDetail: 'test error',
       },

@@ -20,7 +20,7 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <Button onClick={() => {}}>Iniciar sesión</Button>
+            <Button onClick={() => navigate('/login')}>Iniciar sesión</Button>
           </li>
         </ul>
       </nav>

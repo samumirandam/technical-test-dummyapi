@@ -7,14 +7,14 @@ import reduxThunk from 'redux-thunk';
 import { configureStore as configureReduxStore } from '@reduxjs/toolkit';
 import { BrowserRouter } from 'react-router-dom';
 
-import reducer from '@reducers';
+import rootReducer from '../store/reducers';
 
 const middlewares = [reduxThunk];
 const mockStore = configureStore(middlewares);
 
 const AllTheProviders = ({ children }) => {
   const store = configureReduxStore({
-    reducer,
+    reducer: rootReducer,
   });
   const setupStore = { ...store.getState(), ...children.props };
   const compomentStore = mockStore(setupStore);

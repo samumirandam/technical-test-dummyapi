@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { format } from 'date-fns';
 
-import { getUserAction } from '@actions';
+import { getUserAction } from '@modules/user/actions';
+import {
+  getUser,
+  isPostLoading,
+  isPostError,
+  getPostErrorDetail,
+} from '@modules/user/selectors';
 
 import Loader from '@components/loader';
 import Error from '@components/error';
@@ -15,10 +21,10 @@ import './user-profile.scss';
 const UserProfile = ({ id }) => {
   const dispatch = useDispatch();
 
-  const userData = useSelector((state) => state.user?.data);
-  const isLoading = useSelector((state) => state.user?.isLoading);
-  const isError = useSelector((state) => state.user?.isError);
-  const errorDetail = useSelector((state) => state.user?.errorDetail);
+  const userData = useSelector(getUser);
+  const isLoading = useSelector(isPostLoading);
+  const isError = useSelector(isPostError);
+  const errorDetail = useSelector(getPostErrorDetail);
 
   useEffect(() => {
     if (id) {

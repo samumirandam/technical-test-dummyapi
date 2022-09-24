@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 
-import { getPostListAction } from '@actions';
+import { getPostListAction } from '@modules/post/actions';
+import {
+  getPosts,
+  getTotalPosts,
+  isPostLoading,
+  isPostError,
+  getPostErrorDetail,
+} from '@modules/post/selectors';
 
 import PostList from '@containers/post-list';
 import Modal from '@containers/modal';
@@ -29,11 +36,11 @@ const Home = () => {
   const [modalCommentOpen, setModalCommentOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(undefined);
 
-  const postList = useSelector((state) => state.postList?.data?.data);
-  const total = useSelector((state) => state.postList?.data?.total);
-  const isLoading = useSelector((state) => state.postList?.isLoading);
-  const isError = useSelector((state) => state.postList?.isError);
-  const errorDetail = useSelector((state) => state.postList?.errorDetail);
+  const postList = useSelector(getPosts);
+  const total = useSelector(getTotalPosts);
+  const isLoading = useSelector(isPostLoading);
+  const isError = useSelector(isPostError);
+  const errorDetail = useSelector(getPostErrorDetail);
 
   const handleOpenUserProfile = (userId) => {
     setSelectedUser(userId);

@@ -20,7 +20,12 @@ const Comment = ({ owner, message, publishDate }) => (
 );
 
 Comment.propTypes = {
-  owner: PropTypes.string.isRequired,
+  owner: PropTypes.shape({
+    id: PropTypes.string,
+    picture: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+  }).isRequired,
   message: PropTypes.string.isRequired,
   publishDate: PropTypes.string.isRequired,
 };
