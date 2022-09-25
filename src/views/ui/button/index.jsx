@@ -5,10 +5,10 @@ import classnames from 'classnames';
 import './button.scss';
 
 const Button = ({
-  children, className, flat, primary, onClick,
+  children, className, flat, primary, onClick, type,
 }) => (
   <button
-    type="button"
+    type={type === 'submit' ? 'submit' : 'button'}
     className={classnames('Button', className, {
       flat,
       primary,
@@ -26,12 +26,14 @@ Button.propTypes = {
   flat: PropTypes.bool,
   primary: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
+  type: PropTypes.string,
 };
 
 Button.defaultProps = {
   className: '',
   primary: false,
   flat: false,
+  type: 'button',
 };
 
 export default Button;
