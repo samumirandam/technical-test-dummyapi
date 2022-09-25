@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { loginAction } from '@modules/auth/actions';
 
 import Button from '@ui/button';
+import Input from '@ui/input';
 
 import './login.scss';
 
@@ -22,7 +23,7 @@ const Login = () => {
       <div className="Login__container">
         <h1>Inicio de sesión</h1>
         <form onSubmit={handleLogin}>
-          <input
+          <Input
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
