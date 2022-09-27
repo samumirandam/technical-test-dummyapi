@@ -1,4 +1,4 @@
-@import "@styles/vars";
+@import '@styles/vars';
 
 .Header {
   display: flex;
@@ -6,18 +6,5 @@
 
   &__home {
     margin: auto 0 auto $md;
-  }
-
-  nav {
-    ul {
-      display: flex;
-      justify-content: end;
-
-      li {
-        margin: auto 0;
-        padding: $md;
-        list-style: none;
-      }
-    }
   }
 }

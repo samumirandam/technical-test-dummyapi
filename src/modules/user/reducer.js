@@ -2,7 +2,7 @@ import { GET_USER_LOADING, GET_USER_SUCCESS, GET_USER_ERROR } from './types';
 
 export const initialState = {
   isLoading: false,
-  isSucces: false,
+  isSuccess: false,
   isError: false,
   data: null,
   errorDetail: null,
@@ -22,7 +22,7 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         ...initialState,
-        isSucces: true,
+        isSuccess: true,
         data: action.payload,
       };
     }

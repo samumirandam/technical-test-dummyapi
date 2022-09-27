@@ -6,6 +6,9 @@ import Layout from '@containers/layout';
 import Home from '@pages/home';
 import NotFound from '@pages/not-found';
 import Login from '@pages/login';
+import Logout from '@pages/logout';
+
+import AuthRoute from './auth-route';
 
 import '@styles/global.css';
 
@@ -21,6 +24,14 @@ const App = () => (
           <Route path="page/:page" element={<Home />} />
         </Route>
         <Route path="/login" element={<Login />} />
+        <Route
+          path="/logout"
+          element={(
+            <AuthRoute>
+              <Logout />
+            </AuthRoute>
+          )}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

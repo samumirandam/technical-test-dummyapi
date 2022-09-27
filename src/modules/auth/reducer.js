@@ -9,7 +9,7 @@ import {
 
 export const initialState = {
   isLoading: false,
-  isSucces: false,
+  isSuccess: false,
   isError: false,
   data: null,
   errorDetail: null,
@@ -30,7 +30,7 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         ...initialState,
-        isSucces: true,
+        isSuccess: true,
         data: action.payload,
       };
     }
@@ -38,7 +38,7 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         ...initialState,
-        isSucces: true,
+        isSuccess: true,
       };
     }
     case LOGOUT_ERROR:

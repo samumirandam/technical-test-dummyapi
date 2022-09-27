@@ -6,7 +6,7 @@ import {
 
 export const initialState = {
   isLoading: false,
-  isSucces: false,
+  isSuccess: false,
   isError: false,
   data: null,
   errorDetail: null,
@@ -26,7 +26,7 @@ const commentReducer = (state = initialState, action) => {
       return {
         ...state,
         ...initialState,
-        isSucces: true,
+        isSuccess: true,
         data: action.payload,
       };
     }

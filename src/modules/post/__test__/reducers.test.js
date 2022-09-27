@@ -34,7 +34,7 @@ describe('Test for Reducers', () => {
     };
     const expected = {
       ...initialState,
-      isSucces: true,
+      isSuccess: true,
       data: payload,
     };
     expect(reducer(initialState, action)).toEqual(expected);

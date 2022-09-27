@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Menu from '@components/menu';
+
 import Button from '@ui/button';
 
 import './header.scss';
@@ -17,13 +19,7 @@ const Header = () => {
       >
         Petgram
       </Button>
-      <nav>
-        <ul>
-          <li>
-            <Button onClick={() => navigate('/login')}>Iniciar sesión</Button>
-          </li>
-        </ul>
-      </nav>
+      <Menu />
     </header>
   );
 };
