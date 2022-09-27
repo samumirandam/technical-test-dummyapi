@@ -21,7 +21,7 @@ exports[`Test for Comment component Should renders the same component 1`] = `
     <p
       class="Comment__date"
     >
-      30 days
+      about 1 month
     </p>
     <p
       class="Comment__message"

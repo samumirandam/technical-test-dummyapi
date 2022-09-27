@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { loginAction } from '@modules/auth/actions';
+import { logoutAction } from '@modules/auth/actions';
 import {
   getAuth,
   isAuthSuccess,
@@ -15,11 +15,10 @@ import Loader from '@components/loader';
 import Error from '@components/error';
 
 import Button from '@ui/button';
-import Input from '@ui/input';
 
-import './login.scss';
+import './logout.scss';
 
-const Login = () => {
+const Logout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -29,15 +28,13 @@ const Login = () => {
   const isError = useSelector(isAuthError);
   const errorDetail = useSelector(getAuthErrorDetail);
 
-  const [email, setEmail] = useState('');
-
-  const handleLogin = (event) => {
-    dispatch(loginAction({ email }));
+  const handleLogout = (event) => {
+    dispatch(logoutAction({ email: auth?.email }));
     event.preventDefault();
   };
 
   useEffect(() => {
-    if (isSuccess && auth.email) {
+    if (isSuccess && !auth?.email) {
       navigate('/');
     }
   }, [auth, isSuccess]);
@@ -45,14 +42,11 @@ const Login = () => {
   return (
     <section className="Login">
       <div className="Login__container">
-        <h1>Inicio de sesión</h1>
-        <form onSubmit={handleLogin}>
-          <Input
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
+        <h1>Cerrar sesión</h1>
+        <form onSubmit={handleLogout}>
+          <p>Seguto que quieres cerrar sesión</p>
           <Button primary type="submit" onClick={() => {}}>
-            Iniciar sesión
+            Cerrar sesión
           </Button>
         </form>
       </div>
@@ -62,4 +56,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Logout;

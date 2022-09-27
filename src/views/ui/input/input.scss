@@ -1,0 +1,8 @@
+@import '@styles/vars';
+
+.Input {
+  background: $background-pressed;
+  border-radius: 12px;
+  box-shadow: $box-shadow-pressed;
+  padding: $xs;
+}

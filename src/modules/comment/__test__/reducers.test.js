@@ -34,7 +34,7 @@ describe('Test for comment reducers', () => {
     };
     const expected = {
       ...initialState,
-      isSucces: true,
+      isSuccess: true,
       data: payload,
     };
     expect(reducer(initialState, action)).toEqual(expected);

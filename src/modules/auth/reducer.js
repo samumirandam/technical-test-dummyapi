@@ -1,4 +1,11 @@
-import { GET_USER_LOADING, GET_USER_SUCCESS, GET_USER_ERROR } from './types';
+import {
+  LOGIN_LOADING,
+  LOGIN_SUCCESS,
+  LOGIN_ERROR,
+  LOGOUT_LOADING,
+  LOGOUT_SUCCESS,
+  LOGOUT_ERROR,
+} from './types';
 
 export const initialState = {
   isLoading: false,
@@ -9,16 +16,17 @@ export const initialState = {
 };
 
 // eslint-disable-next-line default-param-last
-const userReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_USER_LOADING: {
+    case LOGOUT_LOADING:
+    case LOGIN_LOADING: {
       return {
         ...state,
         ...initialState,
         isLoading: true,
       };
     }
-    case GET_USER_SUCCESS: {
+    case LOGIN_SUCCESS: {
       return {
         ...state,
         ...initialState,
@@ -26,7 +34,15 @@ const userReducer = (state = initialState, action) => {
         data: action.payload,
       };
     }
-    case GET_USER_ERROR: {
+    case LOGOUT_SUCCESS: {
+      return {
+        ...state,
+        ...initialState,
+        isSuccess: true,
+      };
+    }
+    case LOGOUT_ERROR:
+    case LOGIN_ERROR: {
       return {
         ...state,
         ...initialState,
@@ -40,4 +56,4 @@ const userReducer = (state = initialState, action) => {
   }
 };
 
-export default userReducer;
+export default authReducer;

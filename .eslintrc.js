@@ -13,7 +13,7 @@ module.exports = {
   plugins: ['react', 'import'],
   rules: {
     semi: ['error', 'always'],
-    // 'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'windows'],
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function' },

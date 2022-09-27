@@ -13,13 +13,18 @@ exports[`Test for Header component Should renders the same component 1`] = `
     </button>
     <nav>
       <ul>
+        <li />
         <li>
-          <button
-            class="Button"
-            type="button"
+          <a
+            href="/login"
           >
-            Iniciar sesión
-          </button>
+            <button
+              class="Button"
+              type="button"
+            >
+              Iniciar sesión
+            </button>
+          </a>
         </li>
       </ul>
     </nav>
