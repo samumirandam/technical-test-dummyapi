@@ -10,6 +10,7 @@ import {
   isAuthError,
   isAuthLoading,
 } from '@modules/auth/selectors';
+import { getLastUrl } from '@modules/nav/selectors';
 
 import Loader from '@components/loader';
 import Error from '@components/error';
@@ -29,6 +30,8 @@ const Login = () => {
   const isError = useSelector(isAuthError);
   const errorDetail = useSelector(getAuthErrorDetail);
 
+  const lastUrl = useSelector(getLastUrl);
+
   const [email, setEmail] = useState('');
 
   const handleLogin = (event) => {
@@ -37,10 +40,14 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (isSuccess && auth.email) {
-      navigate('/');
+    if (isSuccess && auth?.email) {
+      if (lastUrl) {
+        navigate(lastUrl);
+      } else {
+        navigate('/');
+      }
     }
-  }, [auth, isSuccess]);
+  }, [auth, isSuccess, lastUrl]);
 
   return (
     <section className="Login">
